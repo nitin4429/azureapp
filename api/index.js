@@ -24,7 +24,7 @@ app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing',listingRouter);
 
-pp.use(express.static(path.join(__dirname, '/client/dist')));//for deployment
+app.use(express.static(path.join(__dirname, '/client/dist')));//for deployment
 
 app.get('*', (req, res) => {            //for deployment
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));//for deployment
